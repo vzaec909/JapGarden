@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сад Рёандзи — генератор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⛩️ Сад Рёандзи</h1>
+            <p class="subtitle">
+                Генератор по числам Фибоначчи и золотому сечению
+            </p>
+        </header>
+
+        <section class="panel">
+            <h2>1. Выберите пресет</h2>
+            <div id="presets" class="presets-grid">
+                <div class="loading">Загрузка…</div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>2. Настройте распределение</h2>
+            <label for="groups">Камней в группах (через пробел):</label>
+            <input type="text" id="groups" value="5 2 3 2 3"
+                   placeholder="Например: 5 2 3 2 3">
+            <p class="hint">
+                Или введите одно число N — предложу варианты разбиения.
+            </p>
+
+            <div class="options">
+                <label class="checkbox">
+                    <input type="checkbox" id="golden-grid">
+                    <span>📐 Показать золотую сетку</span>
+                </label>
+
+                <button id="btn-random" class="btn-secondary">
+                    🎲 Случайный сад
+                </button>
+            </div>
+
+            <div class="actions">
+                <button id="btn-generate" class="btn-primary">
+                    🌸 Сгенерировать
+                </button>
+            </div>
+        </section>
+
+        <section id="analysis" class="panel hidden">
+            <h2>Анализ</h2>
+            <div id="analysis-content"></div>
+        </section>
+
+        <section id="variants-panel" class="panel hidden">
+            <h2>Варианты разбиения</h2>
+            <div id="variants-content"></div>
+        </section>
+
+        <section id="result" class="panel hidden">
+            <h2>Ваш сад</h2>
+            <img id="garden-img" alt="Сад Рёандзи">
+            <div class="actions">
+                <a id="btn-download" class="btn-secondary" download="garden.png">
+                    💾 Скачать PNG
+                </a>
+            </div>
+        </section>
+
+        <div id="error" class="error hidden"></div>
+
+        <footer>
+            <p>API: <a href="/docs" target="_blank">/docs</a>
+               • Сделано с 🌸 по мотивам сада Рёандзи в Киото</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
